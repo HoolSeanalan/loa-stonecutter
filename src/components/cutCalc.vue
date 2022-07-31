@@ -1,9 +1,22 @@
+<template>
+    <h1>Odds</h1>
+</template>
+
+<script setup lang="ts">
+defineProps<{
+  e1Success: number,
+  e1Fail: number,
+  e2Success: number,
+  e2Fail: number,
+  rCrack: number,
+  rFail: number,
+  successChance: number
+}>()
+
 let min1: number;
 let min2: number;
 let maxR: number;
 let stoneMax: number;
-
-getChances(0, 0, 0, 0, 0, 0, .75)
 
 function getChances(e1Success: number, e1Fail: number, e2Success: number, e2Fail: number, rCrack: number, rFail: number, successChance: number) {
     let finalChances: number[] = [0, 0, 0];
@@ -78,3 +91,5 @@ function getLargest(odds: number[]) {
 
     return largest
 }
+</script>
+
